@@ -4,6 +4,19 @@
     tools:ShowIn="navigation_view">
 
     <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/routine"
+            android:title="Routine"
+            android:icon="@drawable/routine"
+            />
+
+        <item
+            android:id="@+id/reminder"
+            android:title="Reminders"
+            android:icon="@drawable/reminder"
+            />
+
         <item
             android:id="@+id/assignment"
             android:title="Assignments"
@@ -21,16 +34,7 @@
             android:title="Projects"
             android:icon="@drawable/project"
             />
-        <item
-            android:id="@+id/reminder"
-            android:title="Reminders"
-            android:icon="@drawable/reminder"
-            />
-        <item
-            android:id="@+id/routine"
-            android:title="Routine"
-            android:icon="@drawable/routine"
-            />
+
 
     </group>
 
