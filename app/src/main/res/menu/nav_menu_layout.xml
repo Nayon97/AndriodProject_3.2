@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ShowIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/assignment"
+            android:title="Assignments"
+            android:icon="@drawable/assignment"
+            />
+
+        <item
+            android:id="@+id/classtest"
+            android:title="Class Tests"
+            android:icon="@drawable/classtest"
+            />
+
+        <item
+            android:id="@+id/project"
+            android:title="Projects"
+            android:icon="@drawable/project"
+            />
+        <item
+            android:id="@+id/reminder"
+            android:title="Reminders"
+            android:icon="@drawable/reminder"
+            />
+        <item
+            android:id="@+id/routine"
+            android:title="Routine"
+            android:icon="@drawable/routine"
+            />
+
+    </group>
+
+
+</menu>
