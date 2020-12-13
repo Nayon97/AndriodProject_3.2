@@ -106,8 +106,6 @@ public class Register extends AppCompatActivity {
                 startActivity(new Intent(Register.this,LoginActivity.class));
                 finish();
 
-
-
             }
         });
 
@@ -127,7 +125,7 @@ public class Register extends AppCompatActivity {
                             progressDialog.dismiss();
                             FirebaseUser user = mAuth.getCurrentUser();
                             Toast.makeText(Register.this, "Registerd...\n"+user.getEmail(),Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(Register.this,HomeActivity.class));
+                            startActivity(new Intent(Register.this,MainActivity.class));
                             finish();
 
                         } else {

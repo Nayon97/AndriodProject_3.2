@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/drawerId"
+    android:id="@+id/drawerid"
     tools:openDrawer="start"
-    tools:context=".HomeActivity">
+    tools:context=".homepage">
+
 
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
@@ -408,8 +409,5 @@
 
 
     </ScrollView>
-
-
-
 
 </androidx.drawerlayout.widget.DrawerLayout>
