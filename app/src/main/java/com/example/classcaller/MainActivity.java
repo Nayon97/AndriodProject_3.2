@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 //start Rregister Activity
+                startActivity(new Intent(MainActivity.this, Register.class));
 
 
             }

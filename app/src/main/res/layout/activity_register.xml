@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Register"
+    android:padding="20dp"
+    android:background="#389FD6"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Register"
+        android:textColor="#fff"
+        android:textSize="30sp"
+        android:padding="20dp"
+
+        android:textStyle="bold"
+        ></TextView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/emailTLT"
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/emailEt"
+            android:inputType="textEmailAddress"
+            android:hint="Email"
+            android:background="#fff"
+            android:textColorHint="#000"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_marginBottom="10dp"
+
+
+            ></EditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/passwordTLT"
+        android:layout_below="@id/emailTLT"
+        app:passwordToggleEnabled="true"
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/passwordEt"
+            android:inputType="textPassword"
+            android:hint="Password"
+            android:background="#fff"
+            android:textStyle="bold"
+            android:textSize="15sp"
+
+
+
+            ></EditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_below="@id/passwordTLT"
+        android:text="Register"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/registerBtn">
+
+    </Button>
+
+
+    <!--TextView : click goto Log in activityr-->
+
+    <TextView
+        android:id="@+id/have_acountTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/registerBtn"
+        android:layout_marginTop="30dp"
+        android:text="Alredy have account ? Login"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="25sp"
+
+        ></TextView>
+
+
+
+</RelativeLayout>
