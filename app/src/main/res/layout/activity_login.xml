@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,6 +7,12 @@
     tools:context=".LoginActivity"
     android:padding="20dp"
     android:background="#389FD6"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     >
 
     <TextView
@@ -17,7 +23,6 @@
         android:textColor="#fff"
         android:textSize="30sp"
         android:padding="20dp"
-
         android:textStyle="bold"
         ></TextView>
 
@@ -30,6 +35,7 @@
         >
 
         <EditText
+            android:layout_marginTop="150dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/emailEt"
@@ -76,7 +82,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/Widget.AppCompat.Button"
+        android:backgroundTint="#f57f20"
         android:layout_below="@id/passwordTLT"
         android:text="Login"
         android:layout_centerHorizontal="true"
@@ -92,14 +98,16 @@
     <!--Show recover Password-->
 
     <TextView
+        android:layout_marginTop="20dp"
         android:id="@+id/recoverPassTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/login_btn"
-        android:text="Forgot Paswor or Recover"
+        android:text="Forget Password"
         android:textAlignment="center"
         android:textColor="#fff"
-        android:textSize="20sp"
+        android:textSize="15sp"
+        android:layout_marginBottom="20dp"
 
         ></TextView>
 
@@ -108,17 +116,18 @@
 
     <!--TextView : click goto Log in activityr-->
 
+
     <TextView
         android:id="@+id/nothave_acountTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="Not have an account ? Register"
+        android:text="Not have an account ? Register Here"
         android:textAlignment="center"
         android:textColor="#fff"
-        android:textSize="20sp"
+        android:textSize="15sp"
 
         ></TextView>
 
-
-</RelativeLayout>
+</LinearLayout>
+</ScrollView>
