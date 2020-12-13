@@ -104,6 +104,8 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                startActivity(new Intent(Register.this,LoginActivity.class));
+                finish();
 
 
             }
@@ -141,7 +143,8 @@ public class Register extends AppCompatActivity {
                 //erroer dismiss progerss dialog and get and show the error massage
                 Toast.makeText(Register.this, ""+e.getMessage(),Toast.LENGTH_SHORT).show();
 
-
+                startActivity(new Intent(Register.this,HomeActivity.class));
+                finish();
 
             }
         });
