@@ -19,6 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.classcaller.HomeActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -58,7 +59,9 @@ public class LoginActivity extends AppCompatActivity {
         //int
         mEmailEt =findViewById(R.id.emailEt);
         mPasswordEt=findViewById(R.id.passwordEt);
+        NotHaveAccount=findViewById(R.id.nothave_acountTv);
         mLoginBtn=findViewById(R.id.login_btn);
+        mRecoverPassTv=findViewById(R.id.recoverPassTv);
 
         //login button clivk
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
@@ -97,7 +100,14 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        //recover Password Text View On click
 
+        mRecoverPassTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showRecoverPasswordDialog();
+            }
+        });
 
 
         //init progress dialog
@@ -136,6 +146,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 //input Email
                 String email = emailET.getText().toString().trim();
+                beginRecovery(email);
 
             }
         });
@@ -153,7 +164,36 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    private void beginRecovery(String email) {
+        // show progress
+        progressDialog.setMessage("Sending Email......");
+        progressDialog.show();
 
+        mAuth.sendPasswordResetEmail(email)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()){
+                            progressDialog.dismiss();
+                            Toast.makeText(LoginActivity.this,"Email Sent",Toast.LENGTH_LONG).show();
+                        }
+                        else {
+                            Toast.makeText(LoginActivity.this,"Faild...",Toast.LENGTH_LONG).show();
+
+
+                        }
+
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                //get and show error massage
+                progressDialog.dismiss();
+                Toast.makeText(LoginActivity.this,""+e.getMessage(),Toast.LENGTH_LONG).show();
+
+            }
+        });
+    }
 
     private void loginUser(String email, String passw) {
         // show progress
@@ -170,8 +210,7 @@ public class LoginActivity extends AppCompatActivity {
 
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = mAuth.getCurrentUser();
-
-                            startActivity(new Intent(LoginActivity.this,HomeActivity.class));
+                            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                             finish();
 
                         } else {

@@ -103,9 +103,9 @@ public class Register extends AppCompatActivity {
         mHaveAccountTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 startActivity(new Intent(Register.this,LoginActivity.class));
                 finish();
+
 
 
             }
@@ -127,6 +127,8 @@ public class Register extends AppCompatActivity {
                             progressDialog.dismiss();
                             FirebaseUser user = mAuth.getCurrentUser();
                             Toast.makeText(Register.this, "Registerd...\n"+user.getEmail(),Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(Register.this,HomeActivity.class));
+                            finish();
 
                         } else {
                             // If sign in fails, display a message to the user.
@@ -143,8 +145,7 @@ public class Register extends AppCompatActivity {
                 //erroer dismiss progerss dialog and get and show the error massage
                 Toast.makeText(Register.this, ""+e.getMessage(),Toast.LENGTH_SHORT).show();
 
-                startActivity(new Intent(Register.this,HomeActivity.class));
-                finish();
+
 
             }
         });
