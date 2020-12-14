@@ -20,6 +20,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
 
 public class Register extends AppCompatActivity {
 
@@ -124,6 +128,42 @@ public class Register extends AppCompatActivity {
                             // Sign in success, dismiss dialog and starrt register actvity
                             progressDialog.dismiss();
                             FirebaseUser user = mAuth.getCurrentUser();
+                            //get User Email and uid from auth
+
+                            String email =user.getEmail();
+                            String uid =user.getUid();
+
+                            //when user is registered store user info  in fire base realtime database too
+                            // using has map
+
+
+                            HashMap<Object ,String>hashMap=new HashMap<>();
+
+                            //put info in has map
+
+                            hashMap.put("email",email);
+                            hashMap.put("uid",uid);
+                            hashMap.put("name","");         //will add later (e.g edit profile)
+                            hashMap.put("phone","");       //will add later (e.g edit profile)
+                            hashMap.put("image","");        //will add later (e.g edit profile)
+
+                            //fire baseDatabase instance
+
+                            FirebaseDatabase database =FirebaseDatabase.getInstance();
+
+                            //path to store user data named "USER"
+                            DatabaseReference reference =database.getReference("Users");
+
+                            //put data has map in data base
+
+
+                            reference.child(uid).setValue(hashMap);
+
+
+
+
+
+
                             Toast.makeText(Register.this, "Registerd...\n"+user.getEmail(),Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(Register.this,MainActivity.class));
                             finish();

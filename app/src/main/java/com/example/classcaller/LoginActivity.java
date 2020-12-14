@@ -18,6 +18,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -32,6 +34,8 @@ public class LoginActivity extends AppCompatActivity {
     EditText mEmailEt,mPasswordEt;
     TextView NotHaveAccount,mRecoverPassTv;
     Button mLoginBtn;
+    SignInButton mGoogleLoginBtn;
+
     //Declare an instance of FirebaseAuth
     private FirebaseAuth mAuth;
 
@@ -47,6 +51,9 @@ public class LoginActivity extends AppCompatActivity {
         // Anable Back Buttron
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
+        //beforre mauth
+        //configure google sing in
+
 
         //In the onCreate() method, initialize the FirebaseAuth instance.
         mAuth = FirebaseAuth.getInstance();
@@ -104,6 +111,10 @@ public class LoginActivity extends AppCompatActivity {
                 showRecoverPasswordDialog();
             }
         });
+
+        //handel google login btn click
+
+
 
 
         //init progress dialog
@@ -206,7 +217,7 @@ public class LoginActivity extends AppCompatActivity {
 
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = mAuth.getCurrentUser();
-                            startActivity(new Intent(LoginActivity.this, homepage.class));
+                            startActivity(new Intent(LoginActivity.this,homepage.class));
                             finish();
 
                         } else {
