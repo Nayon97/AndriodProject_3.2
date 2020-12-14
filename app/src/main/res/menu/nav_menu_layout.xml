@@ -29,14 +29,16 @@
             android:icon="@drawable/classtest"
             />
 
-        <item
-            android:id="@+id/project"
-            android:title="Projects"
-            android:icon="@drawable/project"
-            />
+        <item android:id="@+id/action_logOut"
+            android:title="Log Out"
+            >
+
+        </item>
+
 
 
     </group>
+
 
 
 </menu>

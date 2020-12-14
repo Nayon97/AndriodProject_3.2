@@ -8,9 +8,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class homepage extends AppCompatActivity {
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle toggle;
+    FirebaseAuth firebaseAuth;
 
 
 
@@ -21,12 +24,14 @@ public class homepage extends AppCompatActivity {
 
 
         drawerLayout = findViewById(R.id.drawerid);
+        firebaseAuth =FirebaseAuth.getInstance();
 
         toggle = new ActionBarDrawerToggle(this,drawerLayout,R.string.nav_open,R.string.nav_close);
 
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
 
 
