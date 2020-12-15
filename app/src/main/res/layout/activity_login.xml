@@ -52,7 +52,6 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
-
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -110,20 +109,6 @@
         android:layout_marginBottom="20dp"
 
         ></TextView>
-
-        <com.google.android.gms.common.SignInButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:id="@+id/googleLoginBtn"
-            android:layout_centerHorizontal="true"
-            android:background="#EBC700"
-
-
-            >
-
-
-        </com.google.android.gms.common.SignInButton>
 
 
     <!--TextView : click goto Log in activityr-->

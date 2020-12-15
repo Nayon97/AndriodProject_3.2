@@ -18,7 +18,6 @@ public class homepages extends AppCompatActivity {
     TextView mProfileTv;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +33,6 @@ public class homepages extends AppCompatActivity {
         //init view
         mProfileTv=findViewById(R.id.profileTv);
 
-
     }
 
     private void checkUserStatus(){
@@ -45,7 +43,6 @@ public class homepages extends AppCompatActivity {
             //user is sined in satry here
             //set email of loggedin user
             mProfileTv.setText(user.getEmail());
-
 
         }
         else {
@@ -68,9 +65,6 @@ public class homepages extends AppCompatActivity {
         //check on start off
         checkUserStatus();
         super.onStart();
-
-
-
 
     }
     //infalt option menu
