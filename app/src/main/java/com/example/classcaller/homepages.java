@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class homepage extends AppCompatActivity {
+public class homepages extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     TextView mProfileTv;
 
@@ -22,7 +22,7 @@ public class homepage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_homepage);
+        setContentView(R.layout.activity_homepages);
 
         //ActionBar and its Tirtle
 
@@ -51,7 +51,7 @@ public class homepage extends AppCompatActivity {
         else {
             // user not singed in goto main activity
 
-            startActivity(new Intent(homepage.this,MainActivity.class));
+            startActivity(new Intent(homepages.this,MainActivity.class));
             finish();
         }
 
