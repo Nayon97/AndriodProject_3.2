@@ -6,12 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".homepages">
 
-    <TextView
-        android:layout_width="wrap_content"
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/content"
+        ></FrameLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/profileTv"
-        android:text="hoise"
-
-        ></TextView>
-
+        android:layout_gravity="bottom"
+        app:itemTextColor="#000"
+        android:background="#ddd"
+        app:menu="@menu/menu_nav"
+        ></com.google.android.material.bottomnavigation.BottomNavigationView>
 </androidx.appcompat.widget.LinearLayoutCompat>
