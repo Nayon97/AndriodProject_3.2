@@ -96,7 +96,30 @@ public class                                                                    
 
             firebaseAuth.signOut();
             checkUserStatus();
+        }else if(id==R.id.nav_home){
+            Intent intent =new Intent(homepages.this,HomeMenuActivity.class);
+            startActivity(intent);
+            return true;
+
         }
+
+        else if(id==R.id.nav_profile){
+            Intent intent =new Intent(homepages.this,profileMenuActivity.class);
+            startActivity(intent);
+
+            return true;
+
+        }
+
+
+        else if(id==R.id.nav_user){
+            Intent intent =new Intent(homepages.this,UserMenuActivity.class);
+            startActivity(intent);
+            return true;
+
+        }
+
+
 
         return super.onOptionsItemSelected(item);
     }
