@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ClassCaller">
-        <activity android:name=".ToDoAdding"></activity>
+        <activity android:name=".ToDoAdding"
+            android:parentActivityName=".todo"  ></activity>
         <activity
             android:name=".addClass"
             android:parentActivityName=".routine" />
