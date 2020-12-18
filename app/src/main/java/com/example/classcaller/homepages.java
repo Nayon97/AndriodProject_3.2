@@ -3,22 +3,25 @@ package com.example.classcaller;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class                                                                                                                                                                homepages extends AppCompatActivity {
+public class homepages extends AppCompatActivity implements View.OnClickListener{
     FirebaseAuth firebaseAuth;
-   // TextView mProfileTv;
-        ActionBar actionBar;
+    // TextView mProfileTv;
+    ActionBar actionBar;
+    private CardView routine,reminder,todo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,35 +30,37 @@ public class                                                                    
 
         //ActionBar and its Tirtle
 
-         actionBar=getSupportActionBar();
+        actionBar = getSupportActionBar();
         actionBar.setTitle("Class Caller");
 
-        firebaseAuth =FirebaseAuth.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
+        routine = findViewById(R.id.routine);
+        todo = findViewById(R.id.todo);
+        reminder = findViewById(R.id.reminder);
 
-        //init view
-       // mProfileTv=findViewById(R.id.profileTv);
+        //adding listener
 
-        //bottom navigation
+        routine.setOnClickListener(this);
+        todo.setOnClickListener(this);
+        reminder.setOnClickListener(this);
 
 
     }
 
 
-
-    private void checkUserStatus(){
+    private void checkUserStatus() {
         //get current User
-        FirebaseUser user =firebaseAuth.getCurrentUser();
-        if(user !=null){
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        if (user != null) {
 
             //user is sined in satry here
             //set email of loggedin user
-          //  mProfileTv.setText(user.getEmail());
+            //  mProfileTv.setText(user.getEmail());
 
-        }
-        else {
+        } else {
             // user not singed in goto main activity
 
-            startActivity(new Intent(homepages.this,MainActivity.class));
+            startActivity(new Intent(homepages.this, MainActivity.class));
             finish();
         }
 
@@ -85,42 +90,34 @@ public class                                                                    
 
         return super.onCreateOptionsMenu(menu);
     }
-    //handelling menu item
-
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        //get item id
-        int id =item.getItemId();
-        if(id==R.id.action_logOut){
+    public void onClick(View view) {
 
-            firebaseAuth.signOut();
-            checkUserStatus();
-        }else if(id==R.id.nav_home){
-            Intent intent =new Intent(homepages.this,HomeMenuActivity.class);
-            startActivity(intent);
-            return true;
+        Intent intent;
 
-        }
-
-        else if(id==R.id.nav_profile){
-            Intent intent =new Intent(homepages.this,profileMenuActivity.class);
-            startActivity(intent);
-
-            return true;
-
-        }
-
-
-        else if(id==R.id.nav_user){
-            Intent intent =new Intent(homepages.this,UserMenuActivity.class);
-            startActivity(intent);
-            return true;
+        switch (view.getId())
+        {
+            case R.id.routine:
+                intent = new Intent(this,routine.class);
+                startActivity(intent);
+                break;
+            case R.id.todo:
+                intent = new Intent(this,todo.class);
+                startActivity(intent);
+                break;
+            case R.id.reminder:
+                intent = new Intent(this,reminder.class);
+                startActivity(intent);
+                break;
+            default:
+                break;
 
         }
-
-
-
-        return super.onOptionsItemSelected(item);
     }
+
+
+
+
+
 }
