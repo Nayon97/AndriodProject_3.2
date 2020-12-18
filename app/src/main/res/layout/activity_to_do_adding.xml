@@ -76,10 +76,12 @@
             android:textAlignment="center"
             />
 
-
-
-
-
+        <Button
+            android:id="@+id/todosubmitbutton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:layout_marginTop="20dp"/>
 
     </LinearLayout>
 </ScrollView>
