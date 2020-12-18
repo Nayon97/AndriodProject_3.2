@@ -23,7 +23,7 @@
             android:textSize="20sp"
             android:textColor="@color/black"
             android:hint="Course Name"
-            android:textColorHint="@color/black"
+            android:textColorHint="@color/orange"
             android:backgroundTint="@color/orange"
             android:inputType="text"
             android:textCursorDrawable="@null"
@@ -36,7 +36,7 @@
             android:textSize="20sp"
             android:textColor="@color/black"
             android:hint="Course Code"
-            android:textColorHint="@color/black"
+            android:textColorHint="@color/orange"
             android:backgroundTint="@color/orange"
             android:inputType="text"
             android:textCursorDrawable="@null"
@@ -48,7 +48,7 @@
             android:textSize="20sp"
             android:textColor="@color/black"
             android:hint="Room Number"
-            android:textColorHint="@color/black"
+            android:textColorHint="@color/orange"
             android:backgroundTint="@color/orange"
             android:inputType="number"
             android:textCursorDrawable="@null"
@@ -61,31 +61,58 @@
             android:textSize="20sp"
             android:textColor="@color/black"
             android:hint="Course Teacher"
-            android:textColorHint="@color/black"
+            android:textColorHint="@color/orange"
             android:backgroundTint="@color/orange"
             android:inputType="text"
             android:textCursorDrawable="@null"
             />
 
+        <EditText
+            android:id="@+id/day"
+            android:layout_width="100pt"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:hint="Select Day"
+            android:textColorHint="@color/orange"
+            android:backgroundTint="@color/orange"
+            android:inputType="text"
+            android:textCursorDrawable="@null"
+            />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center">
-            <Spinner
-                android:layout_width="wrap_content"
+            <EditText
+                android:layout_marginLeft="15dp"
+                android:id="@+id/start_time"
+                android:layout_width="50pt"
                 android:layout_height="wrap_content"
-                android:id="@+id/select_day"
-                android:layout_margin="10dp"
-                android:entries="@array/day"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:hint="Start Time"
+                android:textColorHint="@color/orange"
+                android:backgroundTint="@color/orange"
+                android:inputType="time"
+                android:textCursorDrawable="@null"
                 />
-            <Spinner
-                android:layout_width="wrap_content"
+            <EditText
+                android:layout_marginLeft="50dp"
+                android:id="@+id/End_time"
+                android:layout_width="50pt"
                 android:layout_height="wrap_content"
-                android:id="@+id/select_time"
-                android:layout_margin="10dp"
-                android:entries="@array/classtime"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:hint="End Time"
+                android:textColorHint="@color/orange"
+                android:backgroundTint="@color/orange"
+                android:inputType="time"
+                android:textCursorDrawable="@null"
                 />
+
+
         </LinearLayout>
+
 
 
 
