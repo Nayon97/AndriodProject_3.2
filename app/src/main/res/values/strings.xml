@@ -2,5 +2,10 @@
     <string name="app_name">Class Caller</string>
     <string name="nav_open">Open</string>
     <string name="nav_close">Close</string>
+    <string-array name="ToDoItem">
+        <item>Assignment</item>
+        <item>Class Test</item>
+        <item>Project</item>
+    </string-array>
 
 </resources>
