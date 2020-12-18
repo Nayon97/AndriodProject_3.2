@@ -21,9 +21,9 @@ public class addClass extends AppCompatActivity implements AdapterView.OnItemSel
 
         this.setTitle("Add Classes");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        Spinner coloredSpinner = findViewById(R.id.coloredspinner);
-        ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.day,R.layout.color_spinner_layout);
-        adapter.setDropDownViewResource(R.layout.spinner_dropdown_layout);
+        Spinner coloredSpinner = findViewById(R.id.dayspinner);
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.day,R.layout.color_day_spinner);
+        adapter.setDropDownViewResource(R.layout.day_dropdowm);
         coloredSpinner.setAdapter(adapter);
         coloredSpinner.setOnItemSelectedListener(this);
 
