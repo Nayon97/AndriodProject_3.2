@@ -9,17 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ClassCaller">
-
-        <activity android:name=".reminder"
-            android:parentActivityName=".homepages"></activity>
-
-        <activity android:name=".todo"
-            android:parentActivityName=".homepages"></activity>
-
-        <activity android:name=".routine"
+        <activity android:name=".addClass"
+            android:parentActivityName=".routine"></activity>
+        <activity
+            android:name=".reminder"
+            android:parentActivityName=".homepages" />
+        <activity
+            android:name=".todo"
+            android:parentActivityName=".homepages" />
+        <activity
+            android:name=".routine"
             android:label="Routine"
-            android:parentActivityName=".homepages"></activity>
-
+            android:parentActivityName=".homepages" />
         <activity android:name=".homepages" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".Register" />

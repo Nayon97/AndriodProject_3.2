@@ -53,9 +53,6 @@ public class homepages extends AppCompatActivity implements View.OnClickListener
         FirebaseUser user = firebaseAuth.getCurrentUser();
         if (user != null) {
 
-            //user is sined in satry here
-            //set email of loggedin user
-            //  mProfileTv.setText(user.getEmail());
 
         } else {
             // user not singed in goto main activity
