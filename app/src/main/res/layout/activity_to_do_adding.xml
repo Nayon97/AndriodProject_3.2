@@ -46,7 +46,6 @@
             android:hint="Submission Date"
             android:textColorHint="@color/orange"
             android:backgroundTint="@color/orange"
-            android:inputType="date"
             android:textCursorDrawable="@null"
             />
 
@@ -59,7 +58,6 @@
             android:hint="Submission Time"
             android:textColorHint="@color/orange"
             android:backgroundTint="@color/orange"
-            android:inputType="date"
             android:textCursorDrawable="@null"
             />
         <EditText
