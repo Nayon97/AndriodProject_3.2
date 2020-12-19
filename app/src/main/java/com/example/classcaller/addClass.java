@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -21,6 +22,8 @@ public class addClass extends AppCompatActivity implements AdapterView.OnItemSel
 
     TextView startbutton, endbutton;
     int Hour1,Minute1,Hour2,Minute2;
+    EditText coursename,coursecode,room,courseteacher;
+    Button submitbutton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,11 @@ public class addClass extends AppCompatActivity implements AdapterView.OnItemSel
 
         startbutton = findViewById(R.id.starttime);
         endbutton = findViewById(R.id.endtime);
+        coursename = findViewById(R.id.course_name);
+        coursecode = findViewById(R.id.course_code);
+        courseteacher = findViewById(R.id.course_teacher);
+        room = findViewById(R.id.room_number);
+        submitbutton = findViewById(R.id.routinesubmitbutton);
 
         startbutton.setOnClickListener(new View.OnClickListener() {
             @Override

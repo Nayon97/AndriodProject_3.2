@@ -9,9 +9,11 @@ import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.TimePicker;
 
 import java.util.Calendar;
@@ -19,8 +21,10 @@ import java.util.Date;
 
 public class ToDoAdding extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    EditText  Day,Time;
+    TextView Day,Time;
     int Hour,Minute;
+    EditText subject,note;
+    Button submitbutton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +39,9 @@ public class ToDoAdding extends AppCompatActivity implements AdapterView.OnItemS
 
         Day = findViewById(R.id.day_of_submission);
         Time = findViewById(R.id.time_of_submission);
+        subject = findViewById(R.id.subject_name);
+        note = findViewById(R.id.note);
+        submitbutton = findViewById(R.id.todosubmitbutton);
 
         Calendar calendar = Calendar.getInstance();
         final int year = calendar.get(Calendar.YEAR);

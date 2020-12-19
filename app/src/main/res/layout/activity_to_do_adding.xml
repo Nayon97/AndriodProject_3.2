@@ -37,28 +37,26 @@
             />
 
 
-        <EditText
+        <TextView
             android:id="@+id/day_of_submission"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:textColor="@color/black"
-            android:hint="Submission Date"
-            android:textColorHint="@color/orange"
-            android:backgroundTint="@color/orange"
-            android:textCursorDrawable="@null"
+            android:textColor="@color/orange"
+            android:layout_marginTop="10dp"
+            android:text="Submission Date"
+
             />
 
-        <EditText
+        <TextView
             android:id="@+id/time_of_submission"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:textColor="@color/black"
-            android:hint="Submission Time"
-            android:textColorHint="@color/orange"
-            android:backgroundTint="@color/orange"
-            android:textCursorDrawable="@null"
+            android:textColor="@color/orange"
+            android:layout_marginTop="10dp"
+            android:text="Last time of submission"
+
             />
         <EditText
             android:id="@+id/note"

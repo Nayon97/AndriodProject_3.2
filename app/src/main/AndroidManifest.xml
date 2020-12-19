@@ -9,8 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ClassCaller">
-        <activity android:name=".ToDoAdding"
-            android:parentActivityName=".todo"  ></activity>
+        <activity android:name=".MainActivity"/>
+        <activity
+            android:name=".ToDoAdding"
+            android:parentActivityName=".todo" />
         <activity
             android:name=".addClass"
             android:parentActivityName=".routine" />
@@ -27,7 +29,8 @@
         <activity android:name=".homepages" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".Register" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashScreen"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
