@@ -39,10 +39,10 @@ public class todo extends AppCompatActivity {
                 StringBuffer buffer = new StringBuffer();
                 while (res.moveToNext()){
                     buffer.append(res.getString(1)+"\n");
-                    buffer.append(res.getString(2)+"\n");
-                    buffer.append(res.getString(3)+"\n");
-                    buffer.append(res.getString(4)+"\n");
-                    buffer.append(res.getString(5)+"\n");
+                    buffer.append("Subject: "+res.getString(2)+"\n");
+                    buffer.append("Last Date of Submission: "+res.getString(3)+"\n");
+                    buffer.append("Last TIme Of Submission"+res.getString(4)+"\n");
+                    buffer.append("Notes (If needed): "+res.getString(5)+"\n");
                 }
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(todo.this);
