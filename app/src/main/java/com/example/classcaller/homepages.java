@@ -28,7 +28,7 @@ public class homepages extends AppCompatActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepages);
 
-        //ActionBar and its Tirtle
+        //ActionBar and its Title
 
         actionBar = getSupportActionBar();
         actionBar.setTitle("Class Caller");
@@ -44,7 +44,6 @@ public class homepages extends AppCompatActivity implements View.OnClickListener
         todo.setOnClickListener(this);
         reminder.setOnClickListener(this);
 
-
     }
 
 
@@ -52,7 +51,6 @@ public class homepages extends AppCompatActivity implements View.OnClickListener
         //get current User
         FirebaseUser user = firebaseAuth.getCurrentUser();
         if (user != null) {
-
 
         } else {
             // user not singed in goto main activity
@@ -112,9 +110,5 @@ public class homepages extends AppCompatActivity implements View.OnClickListener
 
         }
     }
-
-
-
-
 
 }

@@ -115,8 +115,6 @@ public class LoginActivity extends AppCompatActivity {
         //handel google login btn click
 
 
-
-
         //init progress dialog
         progressDialog =new ProgressDialog(this);
 
@@ -186,7 +184,6 @@ public class LoginActivity extends AppCompatActivity {
                         }
                         else {
                             Toast.makeText(LoginActivity.this,"Faild...",Toast.LENGTH_LONG).show();
-
 
                         }
 

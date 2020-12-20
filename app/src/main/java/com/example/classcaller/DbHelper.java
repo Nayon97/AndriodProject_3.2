@@ -14,7 +14,7 @@ public class DbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase DB) {
          DB.execSQL("create Table Todo(Id INTEGER primary key AUTOINCREMENT, Topic TEXT,Subject_Name TEXT,Day TEXT,Time TEXT, Note TEXT)");
-        DB.execSQL("create Table Routine(Id INTEGER primary key AUTOINCREMENT,Course_Name TEXT,Course_Code TEXT,Room_Number INTEGER,Course_Teacher TEXT,Day TEXT, Start_Time TEXT,End_Time TEXT)");
+         DB.execSQL("create Table Routine(Id INTEGER primary key AUTOINCREMENT,Course_Name TEXT,Course_Code TEXT,Room_Number INTEGER,Course_Teacher TEXT,Day TEXT, Start_Time TEXT,End_Time TEXT)");
     }
 
     @Override
@@ -47,7 +47,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public Boolean deleteTodoData(String topic,String subjectName){
 
         SQLiteDatabase DB = this.getWritableDatabase();
-       Cursor cursor = DB.rawQuery("Select * from Todo where Topic=? and Subject_Name=?",new String[]{topic,subjectName});
+        Cursor cursor = DB.rawQuery("Select * from Todo where Topic=? and Subject_Name=?",new String[]{topic,subjectName});
 
        if(cursor.getCount()>0)
        {
@@ -98,11 +98,11 @@ public class DbHelper extends SQLiteOpenHelper {
     public Boolean deleteRoutineData(String coursecode,String day){
 
         SQLiteDatabase DB = this.getWritableDatabase();
-        Cursor cursor = DB.rawQuery("Select * from Todo where Course_Code=? and Day=?",new String[]{coursecode,day});
+        Cursor cursor = DB.rawQuery("Select * from Routine where Course_Code=? and Day=?",new String[]{coursecode,day});
 
         if(cursor.getCount()>0)
         {
-            long result = DB.delete("Todo","Course_Code=? and Day=?",new String[]{coursecode,day});
+            long result = DB.delete("Routine","Course_Code=? and Day=?",new String[]{coursecode,day});
             if (result==-1){
                 return false;
             }else{

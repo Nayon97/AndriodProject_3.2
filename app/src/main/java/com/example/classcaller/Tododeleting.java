@@ -41,10 +41,9 @@ public class Tododeleting extends AppCompatActivity implements AdapterView.OnIte
             @Override
             public void onClick(View view) {
                 String subnameTxt = subject.getText().toString();
+                Boolean checkdelete = DB.deleteTodoData(topic,subnameTxt);
 
-                Boolean checkinsert = DB.deleteTodoData(topic,subnameTxt);
-
-                if (checkinsert==true)
+                if (checkdelete==true)
                 {
                     Toast.makeText(Tododeleting.this, "Data Deleted", Toast.LENGTH_SHORT).show();
                 }else{

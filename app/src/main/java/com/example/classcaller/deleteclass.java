@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class deleteclass extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    EditText subject;
+    EditText coursecode;
     Button deletebutton;
     String selectday;
     DbHelper DB;
@@ -36,17 +36,17 @@ public class deleteclass extends AppCompatActivity implements AdapterView.OnItem
 
         DB = new DbHelper(this);
 
-        subject = findViewById(R.id.subject_namedelete);
+        coursecode = findViewById(R.id.subject_namedelete);
         deletebutton = findViewById(R.id.routinedeletebutton);
         DB = new DbHelper(this);
 
         deletebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String subnameTxt = subject.getText().toString();
-                Boolean checkinsert = DB.deleteTodoData(subnameTxt,selectday);
+                String subcodeTxt = coursecode.getText().toString();
+                Boolean checkdelete = DB.deleteRoutineData(subcodeTxt,selectday);
 
-                if (checkinsert==true)
+                if (checkdelete==true)
                 {
                     Toast.makeText(deleteclass.this, "Data Deleted", Toast.LENGTH_SHORT).show();
                 }else{
