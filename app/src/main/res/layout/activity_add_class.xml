@@ -34,7 +34,7 @@
 
         <EditText
             android:id="@+id/course_code"
-            android:layout_width="70pt"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:textColor="@color/black"
@@ -47,7 +47,7 @@
            />
         <EditText
             android:id="@+id/room_number"
-            android:layout_width="70pt"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:textColor="@color/black"
@@ -88,23 +88,25 @@
 
             <TextView
                 android:id="@+id/starttime"
-                android:layout_width="50pt"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:textColor="@color/orange"
                 android:layout_marginTop="10dp"
                 android:text="Start Time"
+                android:gravity="center"
                 android:textAlignment="center"
                 android:layout_marginRight="40dp"/>
 
 
             <TextView
                 android:id="@+id/endtime"
-                android:layout_width="50pt"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:textColor="@color/orange"
                 android:layout_marginTop="10dp"
+                android:gravity="center"
                 android:text="End Time"
                android:textAlignment="center"
                 android:layout_marginLeft="20dp"

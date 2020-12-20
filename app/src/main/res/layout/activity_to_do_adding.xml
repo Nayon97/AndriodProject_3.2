@@ -44,7 +44,7 @@
             android:textSize="20sp"
             android:textColor="@color/orange"
             android:layout_marginTop="10dp"
-            android:text="Submission Date"
+            android:text="Date"
 
             />
 
@@ -55,7 +55,7 @@
             android:textSize="20sp"
             android:textColor="@color/orange"
             android:layout_marginTop="10dp"
-            android:text="Last time of submission"
+            android:text="Time"
             />
         <EditText
             android:id="@+id/note"
@@ -63,7 +63,7 @@
             android:layout_height="200dp"
             android:textSize="20sp"
             android:textColor="@color/black"
-            android:hint="Note"
+            android:hint="Note / Topic"
             android:textColorHint="@color/orange"
             android:backgroundTint="@color/orange"
             android:inputType="text"

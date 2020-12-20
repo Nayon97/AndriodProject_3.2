@@ -14,16 +14,20 @@
         >
         <EditText
             android:id="@+id/hourselect"
-            android:layout_width="wrap_content"
+            android:layout_width="40pt"
+            android:gravity="center"
+            android:textAlignment="center"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:hint="Hour Select"/>
+            android:hint="Hour"/>
         <EditText
             android:id="@+id/minuteelect"
-            android:layout_width="wrap_content"
+            android:layout_width="40pt"
+            android:gravity="center"
+            android:textAlignment="center"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:hint="Minute Select"/>
+            android:hint="Minute"/>
 
     </LinearLayout>
 
@@ -33,7 +37,7 @@
         android:id="@+id/setreminder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sel Alarm For Routine"
+        android:text="Sel Alarm"
         android:textSize="20sp" />
 
 </LinearLayout>
