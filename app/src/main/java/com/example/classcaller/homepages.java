@@ -76,14 +76,22 @@ public class homepages extends AppCompatActivity implements View.OnClickListener
     }
     //infalt option menu
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         //imflating menu
-
         getMenuInflater().inflate(R.menu.nav_menu_layout, menu);
-
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId()==R.id.action_logOut){
+            FirebaseAuth.getInstance().signOut();
+            finish();
+            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
