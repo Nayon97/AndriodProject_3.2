@@ -61,9 +61,11 @@ public class todo extends AppCompatActivity {
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId()==R.id.routineadd)
+        if(item.getItemId()==R.id.add)
         {
             startActivity(new Intent(this, ToDoAdding.class));
+        }else if (item.getItemId()==R.id.delete){
+            startActivity(new Intent(this, Tododeleting.class));
         }
         return super.onOptionsItemSelected(item);
     }

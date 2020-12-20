@@ -56,7 +56,6 @@
             android:textColor="@color/orange"
             android:layout_marginTop="10dp"
             android:text="Last time of submission"
-
             />
         <EditText
             android:id="@+id/note"

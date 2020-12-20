@@ -83,4 +83,11 @@ public class DbHelper extends SQLiteOpenHelper {
         Cursor cursor = DB.rawQuery("Select * from Routine", null);
         return cursor;
     }
+
+    public Cursor setalarm(){
+        SQLiteDatabase DB = this.getReadableDatabase();
+        Cursor cursor = DB.rawQuery("Select Start_Time from Routine",null);
+        return cursor;
+
+    }
 }

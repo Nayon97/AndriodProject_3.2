@@ -4,13 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.Toast;
 
 public class routine extends AppCompatActivity {
 
@@ -31,9 +27,11 @@ public class routine extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId()==R.id.routineadd)
+        if(item.getItemId()==R.id.add)
         {
             startActivity(new Intent(this, addClass.class));
+        }else if (item.getItemId()==R.id.delete){
+            startActivity(new Intent(this, deleteclass.class));
         }
         return super.onOptionsItemSelected(item);
     }
