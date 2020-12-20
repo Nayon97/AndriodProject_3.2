@@ -115,7 +115,7 @@ public class ToDoAdding extends AppCompatActivity implements AdapterView.OnItemS
                 {
                     Toast.makeText(ToDoAdding.this, "Data Inserted", Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(ToDoAdding.this, "No data Inserted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ToDoAdding.this, "No data Found", Toast.LENGTH_SHORT).show();
                 }
 
                 Intent intent = new Intent(ToDoAdding.this,todo.class);

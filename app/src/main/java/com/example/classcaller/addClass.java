@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.format.DateFormat;
@@ -15,15 +16,18 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
 public class addClass extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    TextView startbutton, endbutton;
+    TextView start, end;
     int Hour1,Minute1,Hour2,Minute2;
     EditText coursename,coursecode,room,courseteacher;
     Button submitbutton;
+    String selectday;
+    DbHelper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,16 +41,17 @@ public class addClass extends AppCompatActivity implements AdapterView.OnItemSel
         adapter.setDropDownViewResource(R.layout.day_dropdowm);
         coloredSpinner.setAdapter(adapter);
         coloredSpinner.setOnItemSelectedListener(this);
+        DB = new DbHelper(this);
 
-        startbutton = findViewById(R.id.starttime);
-        endbutton = findViewById(R.id.endtime);
+        start = findViewById(R.id.starttime);
+        end = findViewById(R.id.endtime);
         coursename = findViewById(R.id.course_name);
         coursecode = findViewById(R.id.course_code);
         courseteacher = findViewById(R.id.course_teacher);
         room = findViewById(R.id.room_number);
         submitbutton = findViewById(R.id.routinesubmitbutton);
 
-        startbutton.setOnClickListener(new View.OnClickListener() {
+        start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -67,7 +72,7 @@ public class addClass extends AppCompatActivity implements AdapterView.OnItemSel
                         calendar.set(0,0,0,Hour1,Minute1);
                         //set selected time
 
-                        startbutton.setText(DateFormat.format("hh:mm aa",calendar));
+                        start.setText(DateFormat.format("hh:mm aa",calendar));
 
                     }
                 },12,0,false);
@@ -81,7 +86,7 @@ public class addClass extends AppCompatActivity implements AdapterView.OnItemSel
         });
 
 
-        endbutton.setOnClickListener(new View.OnClickListener() {
+        end.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 TimePickerDialog timePickerDialog = new TimePickerDialog(addClass.this, new TimePickerDialog.OnTimeSetListener() {
@@ -99,7 +104,7 @@ public class addClass extends AppCompatActivity implements AdapterView.OnItemSel
                         calendar.set(0,0,0,Hour2,Minute2);
                         //set selected time
 
-                        endbutton.setText(DateFormat.format("hh:mm aa",calendar));
+                        end.setText(DateFormat.format("hh:mm aa",calendar));
 
                     }
                 },12,0,false);
@@ -112,11 +117,37 @@ public class addClass extends AppCompatActivity implements AdapterView.OnItemSel
             }
         });
 
+
+        submitbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String coursenameTxt = coursename.getText().toString();
+                String coursecodeTxt = coursecode.getText().toString();
+                String roomTxt = room.getText().toString();
+                String courseteacherTxt = courseteacher.getText().toString();
+                String starttimeTxt = start.getText().toString();
+                String endtimeTxt = end.getText().toString();
+
+                Boolean checkinsert = DB.insertRoutineData(coursenameTxt,coursecodeTxt,roomTxt,courseteacherTxt,selectday,starttimeTxt,endtimeTxt);
+
+                if (checkinsert==true)
+                {
+                    Toast.makeText(addClass.this, "Data Inserted", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(addClass.this, "No data Found", Toast.LENGTH_SHORT).show();
+                }
+
+                Intent intent = new Intent(addClass.this,routine.class);
+                startActivity(intent);
+
+            }
+        });
+
     }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+        selectday = parent.getSelectedItem().toString();
     }
 
     @Override

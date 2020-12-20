@@ -13,13 +13,17 @@ public class DbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase DB) {
-         DB.execSQL("create Table todo(Id INTEGER primary key AUTOINCREMENT, Topic TEXT,Subject_Name TEXT,Day TEXT,Time TEXT, Note TEXT)");
+         DB.execSQL("create Table Todo(Id INTEGER primary key AUTOINCREMENT, Topic TEXT,Subject_Name TEXT,Day TEXT,Time TEXT, Note TEXT)");
+        DB.execSQL("create Table Routine(Id INTEGER primary key AUTOINCREMENT,Course_Name TEXT,Course_Code TEXT,Room_Number INTEGER,Course_Teacher TEXT,Day TEXT, Start_Time TEXT,End_Time TEXT)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase DB, int i, int i1) {
-        DB.execSQL("drop Table if exists todo");
+        DB.execSQL("drop Table if exists Todo");
+        DB.execSQL("drop Table if exists Routine");
     }
+
+    //todo Section
 
     public Boolean insertTodoData(String topic,String subjectName,String day,String time,String note){
 
@@ -31,7 +35,7 @@ public class DbHelper extends SQLiteOpenHelper {
         contentValues.put("Time",time);
         contentValues.put("Note",note);
 
-        long result = DB.insert("todo",null,contentValues);
+        long result = DB.insert("Todo",null,contentValues);
         if (result==-1){
             return false;
         }else {
@@ -48,5 +52,35 @@ public class DbHelper extends SQLiteOpenHelper {
 
         return cursor;
 
+    }
+
+    //Routine Section
+
+    public Boolean insertRoutineData(String coursename,String coursecode,String room,String courseteacher,String day,String starttime,String endtime){
+
+        SQLiteDatabase DB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("Course_Name",coursename);
+        contentValues.put("Course_Code",coursecode);
+        contentValues.put("Room_Number",room);
+        contentValues.put("Course_Teacher",courseteacher);
+        contentValues.put("Day",day);
+        contentValues.put("Start_Time",starttime);
+        contentValues.put("End_Time",endtime);
+
+        long result = DB.insert("Routine",null,contentValues);
+        if (result==-1){
+            return false;
+        }else {
+            return true;
+        }
+
+    }
+
+    public Cursor ShowRoutineData() {
+
+        SQLiteDatabase DB = this.getWritableDatabase();
+        Cursor cursor = DB.rawQuery("Select * from Routine", null);
+        return cursor;
     }
 }
