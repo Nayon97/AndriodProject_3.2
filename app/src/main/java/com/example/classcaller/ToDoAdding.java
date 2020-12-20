@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.view.View;
@@ -15,6 +16,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -25,6 +27,9 @@ public class ToDoAdding extends AppCompatActivity implements AdapterView.OnItemS
     int Hour,Minute;
     EditText subject,note;
     Button submitbutton;
+    String topic;
+
+    DbHelper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +47,8 @@ public class ToDoAdding extends AppCompatActivity implements AdapterView.OnItemS
         subject = findViewById(R.id.subject_name);
         note = findViewById(R.id.note);
         submitbutton = findViewById(R.id.todosubmitbutton);
+
+        DB = new DbHelper(this);
 
         Calendar calendar = Calendar.getInstance();
         final int year = calendar.get(Calendar.YEAR);
@@ -93,10 +100,34 @@ public class ToDoAdding extends AppCompatActivity implements AdapterView.OnItemS
             }
         });
 
+
+        submitbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String subnameTxt = subject.getText().toString();
+                String dayTxt = Day.getText().toString();
+                String timeTxt = Time.getText().toString();
+                String noteTxt = note.getText().toString();
+
+                Boolean checkinsert = DB.insertTodoData(topic,subnameTxt,dayTxt,timeTxt,noteTxt);
+
+                if (checkinsert==true)
+                {
+                    Toast.makeText(ToDoAdding.this, "Data Inserted", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(ToDoAdding.this, "No data Inserted", Toast.LENGTH_SHORT).show();
+                }
+
+                Intent intent = new Intent(ToDoAdding.this,todo.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+         topic = parent.getSelectedItem().toString();
         
     }
 
