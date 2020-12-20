@@ -8,12 +8,11 @@
     tools:context=".routine">
 
 
-    <TextView
-        android:id="@+id/textdata"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/showroutine"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Routine"
-        android:gravity="center"
-        android:textSize="20sp"/>
+        android:text="Show Routine"
+        android:textSize="25sp"/>
 
 </RelativeLayout>

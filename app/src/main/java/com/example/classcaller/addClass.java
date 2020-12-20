@@ -34,7 +34,7 @@ public class addClass extends AppCompatActivity implements AdapterView.OnItemSel
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_class);
 
-        this.setTitle("Add Classes");
+        this.setTitle("Add Class");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Spinner coloredSpinner = findViewById(R.id.dayspinner);
         ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.day,R.layout.color_day_spinner);

@@ -35,7 +35,10 @@ public class ToDoAdding extends AppCompatActivity implements AdapterView.OnItemS
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_to_do_adding);
+
+        this.setTitle("Add Todo");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         Spinner coloredSpinner = findViewById(R.id.coloredspinner);
         ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.ToDoItem,R.layout.color_spinner_layout);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_layout);

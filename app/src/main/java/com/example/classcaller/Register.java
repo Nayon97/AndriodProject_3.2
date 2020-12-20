@@ -70,7 +70,7 @@ public class Register extends AppCompatActivity {
 
 
 
-        //Handel registre
+        //Handel regester
 
 
         mRegisterBtn.setOnClickListener(new View.OnClickListener() {

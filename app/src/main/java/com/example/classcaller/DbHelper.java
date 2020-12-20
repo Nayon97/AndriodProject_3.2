@@ -44,12 +44,30 @@ public class DbHelper extends SQLiteOpenHelper {
 
     }
 
+    public Boolean deleteTodoData(String topic,String subjectName){
+
+        SQLiteDatabase DB = this.getWritableDatabase();
+       Cursor cursor = DB.rawQuery("Select * from Todo where Topic=? and Subject_Name=?",new String[]{topic,subjectName});
+
+       if(cursor.getCount()>0)
+       {
+        long result = DB.delete("Todo","Topic=? and Subject_Name=?",new String[]{topic,subjectName});
+        if (result==-1){
+            return false;
+        }else{
+            return true;
+        }
+       }else{
+           return  false;
+       }
+    }
+
+
 
     public Cursor ShowTodoData(){
 
         SQLiteDatabase DB = this.getWritableDatabase();
         Cursor cursor = DB.rawQuery("Select * from todo",null);
-
         return cursor;
 
     }
@@ -74,8 +92,27 @@ public class DbHelper extends SQLiteOpenHelper {
         }else {
             return true;
         }
-
     }
+
+
+    public Boolean deleteRoutineData(String coursecode,String day){
+
+        SQLiteDatabase DB = this.getWritableDatabase();
+        Cursor cursor = DB.rawQuery("Select * from Todo where Course_Code=? and Day=?",new String[]{coursecode,day});
+
+        if(cursor.getCount()>0)
+        {
+            long result = DB.delete("Todo","Course_Code=? and Day=?",new String[]{coursecode,day});
+            if (result==-1){
+                return false;
+            }else{
+                return true;
+            }
+        }else{
+            return  false;
+        }
+    }
+
 
     public Cursor ShowRoutineData() {
 
@@ -84,10 +121,6 @@ public class DbHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-    public Cursor setalarm(){
-        SQLiteDatabase DB = this.getReadableDatabase();
-        Cursor cursor = DB.rawQuery("Select Start_Time from Routine",null);
-        return cursor;
 
-    }
 }
+
